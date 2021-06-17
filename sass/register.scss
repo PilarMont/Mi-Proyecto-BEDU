@@ -1,0 +1,88 @@
+$primarycolor:#F6B8B8;
+$secondarycolor:#bdd2b6;
+$thirdcolor:#f8f4e1;
+$fontfamily:'Lato', sans-serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    outline: 0;
+    background-image: url(/Styles/assets/niklas-hamann-Z6oB3RqaQmU-unsplash.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario {
+    background-color: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+
+
+.fixed-header {
+    background-color:$thirdcolor;
+  }
+
+  .header * {
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 45px;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+    font-family: "Lato", sans-serif;
+    color: black;
+  }
+
+  .header img {
+    position: relative;
+    width: 50px;
+    margin-left: 80px;
+    height: 100%;
+  }
+
+  .header .logo {
+    width: 10%;
+  }
+
+  .header .navbar {
+    width: 100%;
+  }
+
+  .header .navbar menu {
+    width: 70%;
+    text-align: center;
+    font-weight: 500;
+  }
+  .header .menu-item {
+    padding: 7px 13px;
+    text-decoration: none;
+    color: black;
+  }
+  .header a:hover {
+    background-color:#F9DFDC;
+    transition: 1s;
+  }
+  .header a {
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .btn-menu {
+    display: none;
+  }
