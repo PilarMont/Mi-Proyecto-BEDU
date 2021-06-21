@@ -1,5 +1,5 @@
 /*********************** COMENTAR EN PRODUCTIVO *******************************/
-require('dotenv').config(); // Configuring dotenv -> Para instalar -> npm i -D dotenv 
+//require('dotenv').config(); // Configuring dotenv -> Para instalar -> npm i -D dotenv Solo lo voy a correr si no estpy en producción
 /*********************** COMENTAR EN PRODUCTIVO *******************************/
 
 var express = require('express'),
@@ -29,9 +29,9 @@ mongoose.connect(
 const errorhandler = require('errorhandler')
     if (!isProduction) {
       mongoose.set('debug', true)
-      app.use(errorhandler())
+      app.use(errorhandler()) // solo usar errorHandler si no estoy en producción
       // imprimirá los errores en development
-      app.use(function (err, req, res, next) {
+      app.use(function (err, req, res, next) { // esto es un middleware, una función que recibe 4 parámetros un error, una petición porla que se da el error, una respuesta y un next que dice que pase al siguiente middleware, si no llamo a next estonces se dentiene en ese middleware
         console.log(err.stack);
         res.status(err.status || 500);
         res.json({
@@ -43,10 +43,10 @@ const errorhandler = require('errorhandler')
       })
     }
     
-require("./models/Usuario");
+require('./models/clientes');
 require('./config/passport');
-require('./models/Mascota');
-require('./models/Solicitud');
+require('./models/productos');
+
 
 
 // Aquí se importarán los modelos Mascota y Solicitud cuando estén listos
