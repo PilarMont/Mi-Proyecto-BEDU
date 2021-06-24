@@ -23,14 +23,14 @@
       lowercase: true,
       required: [true, "no puede estar vacío"],
       match: [/\S+@\S+\.\S+/, "es inválido"],
-      index: true,
+      index: true,  //La opción {index: true} optimizará los queries para el campo username e email.
     },
     ubicacion: String,
     telefono: String,
     hash: String, //este campo se utilizará para la sesión
     salt: String, //este campo se utilizará para la sesión
   },
-  { timestamps: true }
+  { timestamps: true } //Agrega automáticamente la hora y fecha de la creación
 ); 
 
 // usando plugin de validación para que no se repitan correos ni usernames

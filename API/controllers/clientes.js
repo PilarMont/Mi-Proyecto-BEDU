@@ -11,7 +11,7 @@ const Cliente = mongoose.model("Cliente")
 const passport = require('passport');
 
 function crearCliente(req, res, next) {
-  // Instanciaremos un nuevo clienres utilizando la clase usuario
+  // Instanciaremos un nuevo clienres utilizando la clase cliente
   const body = req.body,
     password = body.password
 
@@ -46,12 +46,10 @@ function modificarCliente(req, res, next) {
     let nuevaInfo = req.body
     if (typeof nuevaInfo.username !== 'undefined')
       user.username = nuevaInfo.username
-    if (typeof nuevaInfo.bio !== 'undefined')
-      user.bio = nuevaInfo.bio
+    if (typeof nuevaInfo.ubicacion !== 'undefined')
+      user.ubicacion = nuevaInfo.ubicacion
     if (typeof nuevaInfo.telefono !== 'undefined')
       user.telefono = nuevaInfo.telefono
-    if (typeof nuevaInfo.tipo !== 'undefined')
-      user.tipo = nuevaInfo.tipo
     if (typeof nuevaInfo.password !== 'undefined')
       user.crearPassword(nuevaInfo.password)
     user.save().then(updatedUser => {                                   //Guardando usuario modificado en MongoDB.

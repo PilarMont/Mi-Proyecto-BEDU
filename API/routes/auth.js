@@ -1,3 +1,5 @@
+// Archivo que se crea para configurar autorizaciones sobre los distintos endpoints de nuestro proyectp 
+
 const jwt = require('express-jwt');
 const secret = require('../config').secret;
 
@@ -10,16 +12,16 @@ function getTokenFromHeader(req) {
 }
 
 const auth = {
-    requerido: jwt({
+    requerido: jwt({   //El middleware requerido se utilizará para endpoints donde se requiera tener una sesión y opcional donde no sean necesarios.
         secret: secret,
         algorithms: ['HS256'],
         userProperty: 'usuario',
-        getToken: getTokenFromHeader
+        getToken: getTokenFromHeader  //La función getTokenFromHeader() es una función que utlizarán los dos middlewares para extraer el token del header de Authorization de una petición http.
     }),
     opcional: jwt({
         secret: secret,
         algorithms: ['HS256'],
-        userProperty: 'usuario',
+        userProperty: 'usuario',   //La propiedad userProperty es donde vendrá el JWT descifrado y que podrémos utilizar después en el objeto request por medio de req.usuario
         credentialsRequired: false,
         getToken: getTokenFromHeader
     })

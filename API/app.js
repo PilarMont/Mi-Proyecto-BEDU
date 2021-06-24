@@ -1,5 +1,5 @@
 /*********************** COMENTAR EN PRODUCTIVO *******************************/
-//require('dotenv').config(); // Configuring dotenv -> Para instalar -> npm i -D dotenv Solo lo voy a correr si no estpy en producción
+require('dotenv').config(); // Configuring dotenv -> Para instalar -> npm i -D dotenv Solo lo voy a correr si no estpy en producción
 /*********************** COMENTAR EN PRODUCTIVO *******************************/
 
 var express = require('express'),
@@ -24,6 +24,10 @@ mongoose.connect(
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 
+/*mongoose.connect(
+  "mongodb+srv://<usuario>:<password>@cluster0-xmea4.mongodb.net/<dbname>?retryWrites=true&w=majority"
+);*/
+
 //mongoose.set("debug", true);
 
 const errorhandler = require('errorhandler')
@@ -43,13 +47,13 @@ const errorhandler = require('errorhandler')
       })
     }
     
-require('./models/clientes');
+// Aquí se importarán los modelos de clientes y productos cuando estén listos
+require("./models/clientes");
 require('./config/passport');
 require('./models/productos');
 
 
 
-// Aquí se importarán los modelos Mascota y Solicitud cuando estén listos
 /*********************** Mongoose Configuration *******************************/
 
 // Agregamos el código de nuestro router (routes/index.js)
