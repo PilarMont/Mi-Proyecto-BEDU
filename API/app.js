@@ -48,7 +48,7 @@ const errorhandler = require('errorhandler')
     }
     
 // Aquí se importarán los modelos de clientes y productos cuando estén listos
-require("./models/clientes");
+require('./models/Cliente');
 require('./config/passport');
 require('./models/productos');
 

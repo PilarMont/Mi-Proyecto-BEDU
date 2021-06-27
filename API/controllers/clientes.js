@@ -32,7 +32,7 @@ function obtenerCliente(req, res, next) {                              //Obtenie
       return res.json(user.publicData());
     }).catch(next);
   } else {
-    Cliente.find().then(usuarios=>{
+    Cliente.find().then(clientes=>{
       clientes = clientes.map(u => u.publicData())
       res.send(clientes)
     }).catch(next)
