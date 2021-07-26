@@ -1,0 +1,35 @@
+{% extends "./base.html" %}
+
+{% block title %} Registro {% endblock %}
+
+{% block body %}  
+<!-- Contenedor de acciones de usuario --> 
+            <span class="btn-menu"></span>
+                <i class="fas fa-bars"></i>
+            </nav>       
+        </header>
+        <main>
+    <form action="formulario">
+    <h1>Regístrate</h1>
+    <div class="contenedor">
+        <div class="input-contenedor"> 
+            <i class="fas fa-user icon"></i>
+            <input type="text" placeholder="Nombre Completo">
+        </div>
+        <div class="input-contenedor"> 
+            <i class="fas fa-envelope icon"></i>
+            <input type="text" placeholder="E-mail">
+        </div>
+        <div class="input-contenedor"> 
+            <i class="fas fa-key icon"></i>
+            <input type="password" placeholder="Contraseña">
+        </div>
+        <input type="submit" value="registrate" class="button">
+        <p>Al registrarte aceptas nuestras condiciones de uso y políticas de privacidad de datos</p>
+        <p>¿Ya tienes cuenta?<a class= "link" href="/webpages/login.html">Inicia sesión</a></p>
+
+    </div>
+    </form>
+</main>
+{% endblock %}  
+
